@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="registration">Create Account Here</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="create_username">Create Username</string>
+    <string name="create_password">Create Password</string>
+    <string name="submit">Sign Up</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">already have an account?</string>
+    <string name="log_in">Log In</string>
+    <string name="enter_email_or_password">Enter Email or Username</string>
+    <string name="chat_app">Chat App</string>
+    <string name="login">Login</string>
+    <string name="not_have_an_account">Not have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="user">User</string>
+    <string name="hello">hello</string>
+    <string name="username">Username</string>
+    <string name="message">Message</string>
+    <string name="_10_00_am">10:00 AM</string>
+    <string name="may_10_2023">May 10,2023</string>
+    <string name="today">Today</string>
+    <string name="darshan">Darshan</string>
+</resources>

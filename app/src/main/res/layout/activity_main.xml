@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/baloobhai_bold"
+        android:text="@string/registration"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cr_usernameET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/register_edittext"
+        android:ems="10"
+        android:fontFamily="@font/baloobhai_regular"
+        android:hint="@string/create_username"
+        android:inputType="text"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#777777"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/cr_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/register_edittext"
+        android:ems="10"
+        android:fontFamily="@font/baloobhai_regular"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#777777"
+        app:layout_constraintEnd_toEndOf="@+id/cr_usernameET"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cr_usernameET"
+        app:layout_constraintTop_toBottomOf="@+id/cr_usernameET"
+        tools:ignore="TextFields" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPasswordLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        app:boxStrokeColor="#0AF313"
+        app:layout_constraintEnd_toEndOf="@+id/cr_email"
+        app:layout_constraintStart_toStartOf="@+id/cr_email"
+        app:layout_constraintTop_toBottomOf="@+id/cr_email"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cr_passwordET"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_edittext"
+            android:fontFamily="@font/baloobhai_regular"
+            android:hint="@string/create_password"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#777777" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPasswordLayout2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        app:boxStrokeColor="#0AF313"
+        app:layout_constraintEnd_toEndOf="@+id/etPasswordLayout"
+        app:layout_constraintStart_toStartOf="@+id/etPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cr_confirmPasswordET"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_edittext"
+            android:fontFamily="@font/baloobhai_regular"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#777777" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/signupBTN"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/submit_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/baloobhai_medium"
+        android:text="@string/submit"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/etPasswordLayout2"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/etPasswordLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/baloobhai_medium"
+        android:text="@string/already_have_an_account"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupBTN"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/loginPageBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/baloobhai_medium"
+        android:text="@string/log_in"
+        android:textColor="@color/theme"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

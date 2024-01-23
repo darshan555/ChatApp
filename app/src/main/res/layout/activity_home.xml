@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/theme"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/loginUserTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/darshan"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:textSize="25sp"
+            android:layout_weight="1"
+            android:fontFamily="@font/baloobhai_semibold"
+            android:textColor="@color/white"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/addFriendBTN"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_add_friend" />
+        <ImageView
+            android:id="@+id/logoutBTN"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_logout" />
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/search_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/otherUserRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        tools:listitem="@layout/home_user_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
