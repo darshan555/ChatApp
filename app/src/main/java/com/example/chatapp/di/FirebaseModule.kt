@@ -1,10 +1,7 @@
 package com.example.chatapp.di
 
-import com.example.chatapp.reposImpl.AuthRepositoryImpl
-import com.example.chatapp.reposImpl.UsersRepositoryImpl
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

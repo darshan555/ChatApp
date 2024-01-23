@@ -15,7 +15,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RepositoryModule {
-
     @Provides
     fun provideUserRepository(firebaseFireStore: FirebaseFirestore): UsersRepository =
         UsersRepositoryImpl(firebaseFireStore)
@@ -26,5 +25,4 @@ object RepositoryModule {
         firebaseFireStore: FirebaseFirestore,
         firebaseAuth: FirebaseAuth,
     ): AuthRepository = AuthRepositoryImpl(firebaseFireStore, firebaseAuth)
-
 }

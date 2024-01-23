@@ -8,14 +8,18 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.chatapp.databinding.HomeUserItemBinding
-import com.example.chatapp.model.LastMessage
+import com.example.chatapp.model.Message
 import com.example.chatapp.model.User
 import com.example.chatapp.util.UserDiffUtil
 import com.example.chatapp.view.ChatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class OtherUserAdapter(private val context: Context) :
     RecyclerView.Adapter<OtherUserAdapter.UserViewHolder>() {
     private var oldList = mutableListOf<User>()
+    private val userLastMessages = mutableMapOf<String, Message?>()
 
     class UserViewHolder(val binding: HomeUserItemBinding) : ViewHolder(binding.root)
 
@@ -30,11 +34,11 @@ class OtherUserAdapter(private val context: Context) :
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val item = oldList[position]
         holder.binding.usernameTV.text = item.username
-//        holder.binding.lastMsgTV.text = item.lastMessage
-
+        val lastMessage = userLastMessages[item.userId]
+        holder.binding.lastMsgTV.text = lastMessage?.content ?:""
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ChatActivity::class.java)
-            intent.putExtra("userid", item.userid)
+            intent.putExtra("userid", item.userId)
             intent.putExtra("username", item.username)
             context.startActivity(intent)
         }
@@ -49,6 +53,12 @@ class OtherUserAdapter(private val context: Context) :
         val diffResult = DiffUtil.calculateDiff(diffUtil)
         oldList = newList
         diffResult.dispatchUpdatesTo(this)
+    }
+    fun setLastMessage(user: User, lastMessage: Message?) {
+        userLastMessages[user.userId] = lastMessage
+        CoroutineScope(Dispatchers.Main).launch {
+            notifyDataSetChanged()
+        }
     }
 }
 

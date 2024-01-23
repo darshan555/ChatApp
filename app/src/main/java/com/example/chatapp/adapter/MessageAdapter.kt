@@ -32,7 +32,6 @@ class MessageAdapter : RecyclerView.Adapter<ViewHolder>() {
                     false
                 )
             )
-
             VIEW_TYPE_RECEIVE -> ReceiveViewHolder(
                 ReceiveLayoutBinding.inflate(
                     LayoutInflater.from(parent.context),

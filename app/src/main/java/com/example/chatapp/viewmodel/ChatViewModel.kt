@@ -20,6 +20,7 @@ class ChatViewModel @Inject constructor(private val usersRepository: UsersReposi
             usersRepository.sendMessage(message = message)
         }
     }
+
     private var _messages = MutableStateFlow<List<Message?>>(emptyList())
     val messages: StateFlow<List<Message?>> = _messages
 
